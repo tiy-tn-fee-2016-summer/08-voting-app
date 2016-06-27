@@ -6,11 +6,25 @@
   <link rel="stylesheet" href="/app.css">
 </head>
 <body>
+  <div id="app">
+    <h2 class="total-votes">Total Votes: {{totalVotes(options)}}</h2>
+    <ul class="vote-list">
+      <li class="vote-list__item" v-for="option in options" @click="incrementVote(options, $index)" v-bind:style="{height: percentVotes(options, $index)}">
+        {{option.name}} - {{percentVotes(options, $index)}}
+      </li>
+    </ul>
+
+    <form class="vote-form" v-on:submit="addOption">
+      <input class="vote-form__input" v-model="newOption" placeholder="Option Name">
+      <button class="vote-form__btn">Add New Option</button>
+    </form>
+  </div>
 
   <script src="/vendor.js" charset="utf-8"></script>
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
+    require('index')('#app');
   </script>
 </body>
 </html>
