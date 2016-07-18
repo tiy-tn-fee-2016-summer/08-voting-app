@@ -16,6 +16,7 @@
   "dependencies": {
     "font-awesome": "^4.5.0",
     "normalize-css": "^2.3.1",
+    "vue": "^1.0.25",
     "whatwg-fetch": "^1.0.0",
     "yoga-sass": "^1.0.1"
   },

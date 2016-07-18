@@ -24,11 +24,13 @@ const stylePaths = [
 const vendorFileNames = [
   'fetch.js',
   'loader.js',
+  'vue.js',
 ];
 
 const vendorFolder = new Merge([
   'node_modules/whatwg-fetch/',
   'node_modules/loader.js/lib/loader/',
+  'node_modules/vue/dist/',
 ], {overwrite: true});
 
 const vendorFiles = new Funnel(vendorFolder, {
