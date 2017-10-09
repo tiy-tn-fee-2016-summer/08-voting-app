@@ -1,8 +1,15 @@
-export default function addOption(existingPoll, optionIndex) {
-  const collector = [];
+export default function incrementVote(existingPoll, optionIndex) {
+  let collector = [];
+  let newObject= {};
 
   for (let i = 0; i < existingPoll.length; i++) {
-  }
 
-  return collector;
-}
+
+    newObject = { name: existingPoll[i].name, votes: existingPoll[i].votes };
+    collector.push(newObject);
+
+    }
+
+    collector[optionIndex].votes++;
+    return collector;
+  }
